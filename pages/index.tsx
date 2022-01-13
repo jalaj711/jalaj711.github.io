@@ -1,10 +1,11 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, ButtonGroup, IconButton } from "@mui/material";
 import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/index";
 import GlowingButtonPrimary, {
   GlowingButton,
 } from "../components/GlowingButton";
+import { GitHub, Instagram, LinkedIn, Twitter, MailOutline } from "@mui/icons-material";
 
 const Home: NextPage = () => {
   return (
@@ -51,8 +52,15 @@ const Home: NextPage = () => {
             </GlowingButton>
           </div>
         </div>
-        <span></span>
       </Box>
+
+      <ButtonGroup orientation="vertical" sx={styles.socialMediaButtons}>
+        <GitHub />
+        <Instagram />
+        <LinkedIn />
+        <Twitter />
+        <MailOutline />
+      </ButtonGroup>
       <div style={{ height: "100vh" }} />
       <div style={{ height: "100vh" }} />
       <div style={{ height: "100vh" }} />

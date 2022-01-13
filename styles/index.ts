@@ -24,13 +24,33 @@ const styles: style = {
       },
     },
     "@keyframes fadeIn": {
-      "from": {
-        opacity: 0
+      from: {
+        opacity: 0,
       },
-      "to": {
-        opacity: 1
-      }
-    }
+      to: {
+        opacity: 1,
+      },
+    },
+  }),
+  socialMediaButtons: (theme) => ({
+    position: "absolute",
+    right: theme.spacing(2),
+    bottom: theme.spacing(2),
+    [theme.breakpoints.down("md")]: {
+      display: "none",
+    },
+    "& .MuiSvgIcon-root": {
+      transition: "0.2s",
+      m: ({ spacing }) => spacing(1),
+      fontSize: "xx-large",
+      cursor: "pointer",
+    },
+    "& .MuiSvgIcon-root:hover": {
+      color: theme.palette.primary.main,
+      cursor: "pointer",
+      transform: "translateY(-8px)",
+      filter: `drop-shadow(0 0 16px ${theme.palette.primary.main})`
+    },
   }),
 };
 
