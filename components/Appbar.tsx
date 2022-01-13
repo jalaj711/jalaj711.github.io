@@ -77,6 +77,7 @@ export default function ApplicationBar() {
                   onClick={() => router.push('#')}
                   component="a"
                   href="#"
+                  variant="button"
                 >
                   {elem}
                 </Typography>
