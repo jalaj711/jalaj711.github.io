@@ -15,24 +15,16 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box sx={styles.content}>
-        <Typography
-          sx={{
-            animationDelay: "1.2s",
-          }}
-          color="text.secondary"
-        >
-          hi, I am
-        </Typography>
+        <Typography color="text.secondary">hi, I am</Typography>
         <Typography
           variant="h1"
           sx={{
             letterSpacing: "3px",
-            animationDelay: "1.5s",
           }}
         >
           JALAJ
         </Typography>
-        <div style={{ animationDelay: "1.8s" }}>
+        <div>
           <Typography
             sx={{
               textAlign: "justify",
@@ -59,11 +51,12 @@ const Home: NextPage = () => {
             </GlowingButton>
           </div>
         </div>
+        <span></span>
       </Box>
-      <div style={{height: "100vh"}} />
-      <div style={{height: "100vh"}} />
-      <div style={{height: "100vh"}} />
-      <div style={{height: "100vh"}} />
+      <div style={{ height: "100vh" }} />
+      <div style={{ height: "100vh" }} />
+      <div style={{ height: "100vh" }} />
+      <div style={{ height: "100vh" }} />
     </Box>
   );
 };

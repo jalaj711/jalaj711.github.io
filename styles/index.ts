@@ -10,6 +10,8 @@ const styles: style = {
     top: "40%",
     left: "5%",
     maxWidth: "50%",
+    opacity: 0,
+    animation: "fadeIn 0.3s forwards ease-in 0.7s",
     [theme.breakpoints.down("md")]: {
       left: 0,
       bottom: theme.spacing(2),
@@ -21,6 +23,14 @@ const styles: style = {
         fontSize: "3.5rem",
       },
     },
+    "@keyframes fadeIn": {
+      "from": {
+        opacity: 0
+      },
+      "to": {
+        opacity: 1
+      }
+    }
   }),
 };
 
