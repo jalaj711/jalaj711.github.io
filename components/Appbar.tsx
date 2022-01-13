@@ -7,7 +7,9 @@ import {
   Typography,
   useScrollTrigger,
 } from "@mui/material";
+import { useRouter } from "next/router";
 import React from "react";
+
 const DelayedSlideIn = (props: SlideProps & { delay: number }) => {
   const [visible, setVisible] = React.useState(false);
 
@@ -19,6 +21,8 @@ const DelayedSlideIn = (props: SlideProps & { delay: number }) => {
     </Slide>
   );
 };
+
+// Reference: https://mui.com/components/app-bar
 
 const HideOnScroll = (props: { children: React.ReactElement<any> }) => {
   const trigger = useScrollTrigger();
@@ -43,9 +47,10 @@ function ElevationScroll(props: { children: React.ReactElement<any> }) {
 }
 
 export default function ApplicationBar() {
+  const router = useRouter();
   return (
     <HideOnScroll>
-      <AppBar position="fixed" style={{transition: "0.2s"}}>
+      <AppBar position="fixed" style={{ transition: "0.2s" }}>
         <Toolbar sx={{ bgcolor: "background.default" }}>
           <Fade in={true}>
             <Typography variant="h5" sx={{ flexGrow: 1 }}>
@@ -56,10 +61,25 @@ export default function ApplicationBar() {
               </span>
             </Typography>
           </Fade>
-          {["About", "Contact", "Projects", "Blog", "Resume"].map(
+          {["About", "Connect", "Projects", "Blog", "Resume"].map(
             (elem, index) => (
               <DelayedSlideIn delay={index * 100 + 100} key={index}>
-                <Typography sx={{ mx: 1 }}>{elem}</Typography>
+                <Typography
+                  sx={(theme) => ({
+                    mx: 1,
+                    color: theme.palette.text.primary,
+                    textDecoration: "none",
+                    "&:hover": {
+                      color: theme.palette.primary.main,
+                      transform: "translateY(-4px) !important",
+                    },
+                  })}
+                  onClick={() => router.push('#')}
+                  component="a"
+                  href="#"
+                >
+                  {elem}
+                </Typography>
               </DelayedSlideIn>
             )
           )}
