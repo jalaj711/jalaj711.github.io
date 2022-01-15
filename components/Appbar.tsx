@@ -50,7 +50,7 @@ export default function ApplicationBar() {
   const router = useRouter();
   return (
     <HideOnScroll>
-      <AppBar position="fixed" style={{ transition: "0.2s" }}>
+      <AppBar position="fixed" style={{ transition: "0.2s", opacity: 0.7, backdropFilter: "blur(10px)" }}>
         <Toolbar sx={{ bgcolor: "background.default" }}>
           <Fade in={true}>
             <Typography variant="h5" sx={{ flexGrow: 1 }}>
