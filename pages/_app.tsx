@@ -8,7 +8,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <AppBar />
-      <Component {...pageProps} />
+      <main>
+        <Component {...pageProps} />
+      </main>
     </ThemeProvider>
   );
 }
