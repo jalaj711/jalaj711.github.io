@@ -15,12 +15,15 @@ jobs:
       
     - name: Build
       run: npm run build
+    
+    - name: Export
+      run: npm run export
       
     - name: Deploy
       uses: s0/git-publish-subdir-action@develop
       env:
         REPO: git@github.com:jalaj-07/jalaj-07.github.io.git
         BRANCH: gh-pages
-        FOLDER: build
+        FOLDER: out
         SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
         MESSAGE: "Update deploy with master"
