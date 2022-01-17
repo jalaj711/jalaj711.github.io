@@ -49,9 +49,21 @@ const styles: style = {
       color: theme.palette.primary.main,
       cursor: "pointer",
       transform: "translateY(-8px)",
-      filter: `drop-shadow(0 0 16px ${theme.palette.primary.main})`
+      filter: `drop-shadow(0 0 16px ${theme.palette.primary.main})`,
     },
   }),
+  projTitle: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    textAlign: "center",
+  },
+  projCarousel: {
+    position: "relative",
+    p: 2,
+    display: "flex",
+    justifyContent: "center",
+  },
 };
 
 export default styles;

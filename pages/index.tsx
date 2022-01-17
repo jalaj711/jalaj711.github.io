@@ -1,4 +1,4 @@
-import { Box, Typography, ButtonGroup, IconButton } from "@mui/material";
+import { Box, Typography, ButtonGroup, IconButton, Grid } from "@mui/material";
 import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/index";
@@ -12,6 +12,7 @@ import {
   Twitter,
   MailOutline,
 } from "@mui/icons-material";
+import ProjectsCarousel from "../components/ProjectCarousel/ProjectCarousel";
 
 const Home: NextPage = () => {
   return (
@@ -69,7 +70,24 @@ const Home: NextPage = () => {
           <MailOutline />
         </ButtonGroup>
       </Box>
-      <Box  style={{ minHeight: "100vh" }} />
+      <Box style={{ minHeight: "100vh" }}>
+        <Grid container sx={{ minHeight: "100vh" }}>
+          <Grid item xs={12} md={5} sx={styles.projTitle}>
+            <Typography variant="h3">PROJECTS</Typography>
+            <Typography color="text.secondary">
+              Some things I&apos;ve made
+            </Typography>
+            <div>
+              <GlowingButton sx={{ width: "fit-content", m: 2 }}>
+                View All &gt;
+              </GlowingButton>
+            </div>
+          </Grid>
+          <Grid item xs={12} md={7} sx={styles.projCarousel}>
+            <ProjectsCarousel />
+          </Grid>
+        </Grid>
+      </Box>
       <div style={{ height: "100vh" }} />
       <div style={{ height: "100vh" }} />
       <div style={{ height: "100vh" }} />
