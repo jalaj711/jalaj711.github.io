@@ -1,0 +1,38 @@
+[
+    {
+        "title": "blog 01",
+        "description": "Some great info about an awesome blog in the making.",
+        "image": "/static/blogs/xyz",
+        "height": 50
+    },
+    {
+        "title": "blog 02",
+        "description": "Some great info about an awesome blog in the making.Some great info about an awesome blog in the making.Some great info about an awesome blog in the making.",
+        "image": "/static/blogs/xyz",
+        "height": 40
+    },
+    {
+        "title": "blog 03",
+        "description": "Some great info about an awesome blog in the making.",
+        "image": "/static/blogs/xyz",
+        "height": 45
+    },
+    {
+        "title": "blog 04",
+        "description": "Some great info about an awesome blog in the making.Some great info about an awesome blog in the making.Some great info about an awesome blog in the making.",
+        "image": "/static/blogs/xyz",
+        "height": 50
+    },
+    {
+        "title": "blog 05",
+        "description": "Some great info about an awesome blog in the making.",
+        "image": "/static/blogs/xyz",
+        "height": 45
+    },
+    {
+        "title": "blog 06",
+        "description": "Some great info about an awesome blog in the making.",
+        "image": "/static/blogs/xyz",
+        "height": 40
+    }
+]

@@ -18,7 +18,7 @@ import {
   GitHub,
   Link,
 } from "@mui/icons-material";
-import data from "./projectData.json";
+import data from "../data/projects-best-5.json";
 import { useRouter } from "next/router";
 
 interface ProjectData {
