@@ -1,6 +1,5 @@
 import {
   AppBar,
-  Fade,
   Slide,
   SlideProps,
   Toolbar,
@@ -50,17 +49,16 @@ export default function ApplicationBar() {
   const router = useRouter();
   return (
     <HideOnScroll>
-      <AppBar position="fixed" style={{ transition: "0.2s", opacity: 0.7, backdropFilter: "blur(10px)" }}>
+      <AppBar
+        position="fixed"
+        style={{
+          transition: "0.2s",
+          opacity: 0.7,
+          backdropFilter: "blur(10px)",
+        }}
+      >
         <Toolbar sx={{ bgcolor: "background.default" }}>
-          <Fade in={true}>
-            <Typography variant="h5" sx={{ flexGrow: 1 }}>
-              <span style={{ color: "white" }}>$ </span>
-              jalaj
-              <span style={{ color: "white", fontSize: "1.1rem" }}>
-                &nbsp;&#x2581;
-              </span>
-            </Typography>
-          </Fade>
+          <span style={{ flexGrow: 1 }} />
           {["About", "Connect", "Projects", "Blog", "Resume"].map(
             (elem, index) => (
               <DelayedSlideIn delay={index * 100 + 100} key={index}>
@@ -74,7 +72,7 @@ export default function ApplicationBar() {
                       transform: "translateY(-4px) !important",
                     },
                   })}
-                  onClick={() => router.push('#')}
+                  onClick={() => router.push("#")}
                   component="a"
                   href="#"
                   variant="button"
