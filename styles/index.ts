@@ -77,6 +77,11 @@ const styles: style = {
       }
     },
   }),
+  footer: {
+    background: theme => theme.palette.background.paper,
+    p: 2,
+    textAlign: "center"
+  }
 };
 
 export default styles;

@@ -8,6 +8,7 @@ import {
   CardContent,
   CardActions,
   Button,
+  IconButton,
 } from "@mui/material";
 import { Masonry } from "@mui/lab";
 import type { NextPage } from "next";
@@ -31,10 +32,7 @@ const BlogCard = (
     data: { image: string; title: string; description: string };
   }
 ) => (
-  <Card
-    sx={styles.blogCard}
-    variant="outlined"
-  >
+  <Card sx={styles.blogCard} variant="outlined">
     <CardMedia
       component="img"
       height="140"
@@ -149,15 +147,24 @@ const Home: NextPage = () => {
               </GlowingButton>
             </div>
           </Grid>
-          <Grid item xs={12} md={7} sx={styles.projCarousel} id="project-carousel-container">
+          <Grid
+            item
+            xs={12}
+            md={7}
+            sx={styles.projCarousel}
+            id="project-carousel-container"
+          >
             <ProjectsCarousel />
           </Grid>
         </Grid>
       </Box>
-      <Box sx={styles.box}>
+      <Box style={{ minHeight: "100vh" }}>
         {/** The blogs view */}
-        <Grid container sx={{p: 2, display: "flex", justifyContent: "center"}}>
-          <Grid item xs={12} sx={{ ...styles.title, my: 4}}>
+        <Grid
+          container
+          sx={{ p: 2, display: "flex", justifyContent: "center" }}
+        >
+          <Grid item xs={12} sx={{ ...styles.title, my: 4 }}>
             <Typography variant="h2">Blogs</Typography>
             <Typography color="text.secondary">
               Some stuff I&apos;ve written
@@ -171,12 +178,44 @@ const Home: NextPage = () => {
           <Grid item xs={12} lg={9}>
             <Masonry columns={{ xs: 1, md: 3 }} sx={styles.blogMasonry}>
               {BlogData.map((data, index) => (
-                <BlogCard
-                  data={{ ...data}}
-                  key={index}
-                />
+                <BlogCard data={{ ...data }} key={index} />
               ))}
             </Masonry>
+          </Grid>
+        </Grid>
+      </Box>
+      <Box sx={styles.footer}>
+        <Grid container>
+          <Grid item xs={12} md={4}>
+            {/** TODO: Replace this with a logo */}
+            <Typography variant="h2">JALAJ</Typography>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Typography variant="button" component="div">Discover</Typography>
+            {/** TODO: Convert these to links */}
+            <Typography variant="button" component="div" color="text.secondary">About</Typography>
+            <Typography variant="button" component="div" color="text.secondary">Blog</Typography>
+            <Typography variant="button" component="div" color="text.secondary">Projects</Typography>
+            <Typography variant="button" component="div" color="text.secondary">Resume</Typography>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Typography variant="button" component="div">Devs</Typography>
+            <Typography variant="button" component="div" color="text.secondary">Site Map</Typography>
+            <Typography variant="button" component="div" color="text.secondary">View on GitHub</Typography>
+            <Typography variant="button" component="div" color="text.secondary">Collaborate</Typography>
+          </Grid>
+          
+          <Grid item xs={12} md={6}>
+            <ButtonGroup>
+              <IconButton size="small"><GitHub /></IconButton>
+              <IconButton size="small"><Instagram /></IconButton>
+              <IconButton size="small"><LinkedIn /></IconButton>
+              <IconButton size="small"><Twitter /></IconButton>
+              <IconButton size="small"><MailOutline /></IconButton>
+            </ButtonGroup>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Typography variant="button" component="div">&copy; Jalaj Kumar, 2021</Typography>
           </Grid>
         </Grid>
       </Box>
