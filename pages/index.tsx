@@ -149,7 +149,7 @@ const Home: NextPage = () => {
               </GlowingButton>
             </div>
           </Grid>
-          <Grid item xs={12} md={7} sx={styles.projCarousel}>
+          <Grid item xs={12} md={7} sx={styles.projCarousel} id="project-carousel-container">
             <ProjectsCarousel />
           </Grid>
         </Grid>

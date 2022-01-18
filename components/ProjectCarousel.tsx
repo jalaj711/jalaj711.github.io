@@ -76,7 +76,7 @@ const ProjectCard = (
         component="img"
         image={props.data.image}
         alt={props.data.name}
-        sx={{maxHeight: "30vh"}}
+        sx={{ maxHeight: "30vh" }}
       />
       <CardContent>
         <Typography
@@ -157,9 +157,17 @@ class ProjectsCarousel extends React.Component {
     };
   }
   componentDidMount() {
+    var el = document.getElementById("project-carousel-container");
     setInterval(() => {
-      if (this.state.active === data.length - 1) this.setState({ active: 0 });
-      else this.setState({ active: this.state.active + 1 });
+      if (el) {
+        // Update the carousel only if it is visible
+        var rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          if (this.state.active === data.length - 1)
+            this.setState({ active: 0 });
+          else this.setState({ active: this.state.active + 1 });
+        }
+      }
     }, 3000);
   }
   render(): React.ReactNode {
