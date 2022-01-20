@@ -18,7 +18,9 @@ jobs:
     
     - name: Export
       run: yarn export
-      
+    
+    - name: Disable jekyll processing
+      run: touch ./out/.nojekyll
     - name: Deploy
       uses: s0/git-publish-subdir-action@develop
       env:
