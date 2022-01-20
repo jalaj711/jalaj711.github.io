@@ -2,37 +2,37 @@
     {
         "title": "blog 01",
         "description": "Some great info about an awesome blog in the making.",
-        "image": "/static/blogs/xyz",
+        "image": "/imgs/icon.jpg",
         "height": 50
     },
     {
         "title": "blog 02",
         "description": "Some great info about an awesome blog in the making.Some great info about an awesome blog in the making.Some great info about an awesome blog in the making.",
-        "image": "/static/blogs/xyz",
+        "image": "/imgs/icon.jpg",
         "height": 40
     },
     {
         "title": "blog 03",
         "description": "Some great info about an awesome blog in the making.",
-        "image": "/static/blogs/xyz",
+        "image": "/imgs/icon.jpg",
         "height": 45
     },
     {
         "title": "blog 04",
         "description": "Some great info about an awesome blog in the making.Some great info about an awesome blog in the making.Some great info about an awesome blog in the making.",
-        "image": "/static/blogs/xyz",
+        "image": "/imgs/icon.jpg",
         "height": 50
     },
     {
         "title": "blog 05",
         "description": "Some great info about an awesome blog in the making.",
-        "image": "/static/blogs/xyz",
+        "image": "/imgs/icon.jpg",
         "height": 45
     },
     {
         "title": "blog 06",
         "description": "Some great info about an awesome blog in the making.",
-        "image": "/static/blogs/xyz",
+        "image": "/imgs/icon.jpg",
         "height": 40
     }
 ]
