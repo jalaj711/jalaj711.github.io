@@ -111,7 +111,7 @@ const Home: NextPage = () => {
           sx={{ p: 2, display: "flex", justifyContent: "center" }}
         >
           <Grid item xs={12} sx={{ ...styles.title, my: 4 }}>
-            <Typography variant="h2">Blogs</Typography>
+            <Typography variant="h2">Blog</Typography>
             <Typography color="text.secondary">
               Some stuff I&apos;ve written
             </Typography>
@@ -132,7 +132,7 @@ const Home: NextPage = () => {
       </Box>
       <Box sx={styles.footer}>
         <Grid container>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={4} sx={{display: "flex", flexDirection: "column", justifyContent: "center"}}>
             {/** TODO: Replace this with a logo */}
             <Typography variant="h2">JALAJ</Typography>
           </Grid>
@@ -151,7 +151,7 @@ const Home: NextPage = () => {
             <Typography variant="button" component="div" color="text.secondary">Collaborate</Typography>
           </Grid>
           
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={4}>
             <ButtonGroup>
               <IconButton size="small"><GitHub /></IconButton>
               <IconButton size="small"><Instagram /></IconButton>
@@ -160,7 +160,8 @@ const Home: NextPage = () => {
               <IconButton size="small"><MailOutline /></IconButton>
             </ButtonGroup>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={4} />
+          <Grid item xs={12} md={4}>
             <Typography variant="button" component="div">&copy; Jalaj Kumar, 2021</Typography>
           </Grid>
         </Grid>
