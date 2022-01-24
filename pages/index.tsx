@@ -1,10 +1,4 @@
-import {
-  Box,
-  Typography,
-  ButtonGroup,
-  Grid,
-  IconButton,
-} from "@mui/material";
+import { Box, Typography, ButtonGroup, Grid, IconButton } from "@mui/material";
 import { Masonry } from "@mui/lab";
 import type { NextPage } from "next";
 import Head from "next/head";
@@ -22,7 +16,6 @@ import {
 import ProjectsCarousel from "../components/ProjectCarousel";
 import BlogCard from "../components/BlogCard";
 import BlogData from "../data/blogs-latest-6.json";
-
 
 const Home: NextPage = () => {
   return (
@@ -80,10 +73,48 @@ const Home: NextPage = () => {
           <MailOutline />
         </ButtonGroup>
       </Box>
+      <Box sx={{ minHeight: "100vh" }}>
+        <Grid container sx={{ minHeight: "100vh" }}>
+          <Grid
+            item
+            xs={12}
+            md={5}
+            sx={{ color: (theme) => theme.palette.secondary.main }}
+          >
+            {/**TODO: Add a pic here */}
+          </Grid>
+          <Grid item xs={12} md={7} sx={{ py: 2 }}>
+            <Typography variant="h3">ABOUT ME</Typography>
+            <Typography sx={styles.about}>
+              Hi there! I am Jalaj, a student of Electrical Engineering at the
+              National Institute Of Technology, Durgapur.
+            </Typography>
+            <Typography sx={styles.about}>
+              I have a keen interest in computer programming, especially
+              creating web pages and other applications in languages like
+              Python, C, C++, and Go. I am fairly acquainted with the following
+              technologies:
+              <ul style={{ listStyleType: "circle" }}>
+                <li>React</li>
+                <li>Typescript</li>
+                <li>NodeJs</li>
+                <li>NextJs</li>
+                <li>Flask</li>
+                <li>Django</li>
+              </ul>
+            </Typography>
+            <Typography sx={styles.about}>
+              Besides these, I am always striving to add new technologies in my
+              arsenal and currently, I am focusing my efforts on cybersecurity
+              fields such as cryptography, networking and the stuff.
+            </Typography>
+          </Grid>
+        </Grid>
+      </Box>
       <Box style={{ minHeight: "100vh" }}>
         <Grid container sx={{ minHeight: "100vh" }}>
           <Grid item xs={12} md={5} sx={styles.title}>
-            <Typography variant="h2">Projects</Typography>
+            <Typography variant="h2">PROJECTS</Typography>
             <Typography color="text.secondary">
               Some things I&apos;ve made
             </Typography>
@@ -111,7 +142,7 @@ const Home: NextPage = () => {
           sx={{ p: 2, display: "flex", justifyContent: "center" }}
         >
           <Grid item xs={12} sx={{ ...styles.title, my: 4 }}>
-            <Typography variant="h2">Blog</Typography>
+            <Typography variant="h2">BLOGS</Typography>
             <Typography color="text.secondary">
               Some stuff I&apos;ve written
             </Typography>
@@ -132,37 +163,76 @@ const Home: NextPage = () => {
       </Box>
       <Box sx={styles.footer}>
         <Grid container>
-          <Grid item xs={12} md={4} sx={{display: "flex", flexDirection: "column", justifyContent: "center"}}>
+          <Grid
+            item
+            xs={12}
+            md={4}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
+          >
             {/** TODO: Replace this with a logo */}
             <Typography variant="h2">JALAJ</Typography>
           </Grid>
           <Grid item xs={12} md={4}>
-            <Typography variant="button" component="div">Discover</Typography>
+            <Typography variant="button" component="div">
+              Discover
+            </Typography>
             {/** TODO: Convert these to links */}
-            <Typography variant="button" component="div" color="text.secondary">About</Typography>
-            <Typography variant="button" component="div" color="text.secondary">Blog</Typography>
-            <Typography variant="button" component="div" color="text.secondary">Projects</Typography>
-            <Typography variant="button" component="div" color="text.secondary">Resume</Typography>
+            <Typography variant="button" component="div" color="text.secondary">
+              About
+            </Typography>
+            <Typography variant="button" component="div" color="text.secondary">
+              Blog
+            </Typography>
+            <Typography variant="button" component="div" color="text.secondary">
+              Projects
+            </Typography>
+            <Typography variant="button" component="div" color="text.secondary">
+              Resume
+            </Typography>
           </Grid>
           <Grid item xs={12} md={4}>
-            <Typography variant="button" component="div">Devs</Typography>
-            <Typography variant="button" component="div" color="text.secondary">Site Map</Typography>
-            <Typography variant="button" component="div" color="text.secondary">View on GitHub</Typography>
-            <Typography variant="button" component="div" color="text.secondary">Collaborate</Typography>
+            <Typography variant="button" component="div">
+              Devs
+            </Typography>
+            <Typography variant="button" component="div" color="text.secondary">
+              Site Map
+            </Typography>
+            <Typography variant="button" component="div" color="text.secondary">
+              View on GitHub
+            </Typography>
+            <Typography variant="button" component="div" color="text.secondary">
+              Collaborate
+            </Typography>
           </Grid>
-          
+
           <Grid item xs={12} md={4}>
             <ButtonGroup>
-              <IconButton size="small"><GitHub /></IconButton>
-              <IconButton size="small"><Instagram /></IconButton>
-              <IconButton size="small"><LinkedIn /></IconButton>
-              <IconButton size="small"><Twitter /></IconButton>
-              <IconButton size="small"><MailOutline /></IconButton>
+              <IconButton size="small">
+                <GitHub />
+              </IconButton>
+              <IconButton size="small">
+                <Instagram />
+              </IconButton>
+              <IconButton size="small">
+                <LinkedIn />
+              </IconButton>
+              <IconButton size="small">
+                <Twitter />
+              </IconButton>
+              <IconButton size="small">
+                <MailOutline />
+              </IconButton>
             </ButtonGroup>
           </Grid>
           <Grid item xs={12} md={4} />
           <Grid item xs={12} md={4}>
-            <Typography variant="button" component="div">&copy; Jalaj Kumar, 2021</Typography>
+            <Typography variant="button" component="div">
+              &copy; Jalaj Kumar, 2021
+            </Typography>
           </Grid>
         </Grid>
       </Box>

@@ -81,7 +81,11 @@ const styles: style = {
     background: theme => theme.palette.background.paper,
     p: 2,
     textAlign: "center"
-  }
+  },
+  about: (theme) => ({
+    color: theme.palette.text.secondary,
+    py: 2,
+  })
 };
 
 export default styles;
