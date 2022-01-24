@@ -6,7 +6,7 @@ import {
   CardMedia,
   Typography,
   Chip,
-  Theme,
+  useTheme,
   IconButton,
 } from "@mui/material";
 import React from "react";
@@ -39,6 +39,7 @@ const ProjectCard = (
     pos: number;
   }
 ) => {
+  const theme = useTheme();
   const styles = {
     "-1": {
       top: "5%",
@@ -49,8 +50,8 @@ const ProjectCard = (
     "0": {
       top: "50%",
       transform: "translateY(-50%)",
-      boxShadow: (theme: Theme) =>
-        `0 0 5px ${theme.palette.primary.main}, 0 0 25px ${theme.palette.primary.main}, 0 0 50px ${theme.palette.primary.main}, 0 0 200px ${theme.palette.primary.main}`,
+      background: `linear-gradient(135deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+      boxShadow:  `-30px -30px 150px ${theme.palette.primary.main}, 30px 30px 150px ${theme.palette.secondary.main}`,
     },
     "1": {
       bottom: "5%",
@@ -62,9 +63,9 @@ const ProjectCard = (
   }[props.pos];
   const router = useRouter();
   return (
-    <Card
-      variant="outlined"
-      sx={{
+    <div
+      style={{
+        padding: "4px",
         position: "absolute",
         transition: "0.5s",
         maxWidth: "80%",
@@ -72,77 +73,82 @@ const ProjectCard = (
         ...styles,
       }}
     >
-      <CardMedia
-        component="img"
-        image={props.data.image}
-        alt={props.data.name}
-        sx={{ maxHeight: "30vh" }}
-      />
-      <CardContent>
-        <Typography
-          gutterBottom
-          variant="h5"
-          component="div"
-          sx={{ display: "flex" }}
-        >
-          {props.data.name}
-          <span style={{ flexGrow: 1 }} />
-          <div>
-            <Chip
-              variant="outlined"
-              size="small"
-              sx={{ mx: 0.25 }}
-              icon={<Star />}
-              label={props.data.stars}
-            />
-            <Chip
-              variant="outlined"
-              size="small"
-              sx={{ mx: 0.25 }}
-              icon={<ForkRight />}
-              label={props.data.forks}
-            />
-            <Chip
-              variant="outlined"
-              size="small"
-              sx={{ mx: 0.25 }}
-              icon={<BugReport />}
-              label={props.data.issues}
-            />
-            <Chip
-              variant="outlined"
-              size="small"
-              sx={{ mx: 0.25 }}
-              icon={<Merge />}
-              label={props.data.pr}
-            />
-          </div>
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {props.data.desc}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <IconButton
-          href={props.data.github}
-          onClick={(e) => {
-            e.preventDefault();
-            router.push(props.data.github);
-          }}
-        >
-          <GitHub />
-        </IconButton>
-        <IconButton
-          href={props.data.website}
-          onClick={(e) => {
-            e.preventDefault();
-            router.push(props.data.website);
-          }}
-        >
-          <Link />
-        </IconButton>
-      </CardActions>
-    </Card>
+      <Card
+        variant="outlined"
+        sx={{borderRadius: "32px"}}
+      >
+        <CardMedia
+          component="img"
+          image={props.data.image}
+          alt={props.data.name}
+          sx={{ maxHeight: "30vh" }}
+        />
+        <CardContent>
+          <Typography
+            gutterBottom
+            variant="h5"
+            component="div"
+            sx={{ display: "flex" }}
+          >
+            {props.data.name}
+            <span style={{ flexGrow: 1 }} />
+            <div>
+              <Chip
+                variant="outlined"
+                size="small"
+                sx={{ mx: 0.25 }}
+                icon={<Star />}
+                label={props.data.stars}
+              />
+              <Chip
+                variant="outlined"
+                size="small"
+                sx={{ mx: 0.25 }}
+                icon={<ForkRight />}
+                label={props.data.forks}
+              />
+              <Chip
+                variant="outlined"
+                size="small"
+                sx={{ mx: 0.25 }}
+                icon={<BugReport />}
+                label={props.data.issues}
+              />
+              <Chip
+                variant="outlined"
+                size="small"
+                sx={{ mx: 0.25 }}
+                icon={<Merge />}
+                label={props.data.pr}
+              />
+            </div>
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {props.data.desc}
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <IconButton
+            href={props.data.github}
+            onClick={(e) => {
+              e.preventDefault();
+              router.push(props.data.github);
+            }}
+          >
+            <GitHub />
+          </IconButton>
+          <IconButton
+            href={props.data.website}
+            onClick={(e) => {
+              e.preventDefault();
+              router.push(props.data.website);
+            }}
+          >
+            <Link />
+          </IconButton>
+        </CardActions>
+      </Card>
+    </div>
   );
 };
 
