@@ -64,19 +64,6 @@ const styles: style = {
     display: "flex",
     justifyContent: "center",
   },
-  blogCard: (theme) => ({
-    borderRadius: theme.spacing(2),
-    transition: "0.4s",
-    display: "flex",
-    flexDirection: "column",
-    backgroundImage: "none",
-    "&:hover": {
-      border: `1px solid ${theme.palette.primary.main}`,
-      "& .MuiCardActions-root .MuiButton-root": {
-        opacity: "1 !important"
-      }
-    },
-  }),
   footer: {
     background: theme => theme.palette.background.paper,
     p: 2,
