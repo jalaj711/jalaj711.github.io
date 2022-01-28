@@ -16,6 +16,7 @@ import {
 import ProjectsCarousel from "../components/ProjectCarousel";
 import BlogCard from "../components/BlogCard";
 import BlogData from "../data/blogs-latest-6.json";
+import Image from "next/image";
 
 const Home: NextPage = () => {
   return (
@@ -168,13 +169,11 @@ const Home: NextPage = () => {
             xs={12}
             md={4}
             sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
+              display: "block",
+              textAlign: "center",
             }}
           >
-            {/** TODO: Replace this with a logo */}
-            <Typography variant="h2">JALAJ</Typography>
+            <Image src="/logo128.png" alt="logo" height="128" width="227" />
           </Grid>
           <Grid item xs={12} md={4}>
             <Typography variant="button" component="div">
