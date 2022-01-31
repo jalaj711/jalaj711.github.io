@@ -16,7 +16,6 @@ import {
 import ProjectsCarousel from "../components/ProjectCarousel";
 import BlogCard from "../components/BlogCard";
 import BlogData from "../data/blogs-latest-6.json";
-import Image from "next/image";
 
 const Home: NextPage = () => {
   const starStyle = {
@@ -256,7 +255,7 @@ const Home: NextPage = () => {
               textAlign: "center",
             }}
           >
-            <Image src="/logo128.png" alt="logo" height="128" width="227" />
+            <img src="/logo128.png" alt="logo" height="128" width="227" />
           </Grid>
           <Grid item xs={12} md={4}>
             <Typography variant="button" component="div">

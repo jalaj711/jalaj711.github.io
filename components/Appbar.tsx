@@ -6,7 +6,6 @@ import {
   Typography,
   useScrollTrigger,
 } from "@mui/material";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
 
@@ -59,7 +58,7 @@ export default function ApplicationBar() {
         }}
       >
         <Toolbar sx={{ bgcolor: "background.default" }}>
-          <Image src="/logo64.png" alt="logo" height="64" width="113"/>
+          <img src="/logo64.png" alt="logo" height="64" width="113"/>
           <span style={{ flexGrow: 1 }} />
           {["About", "Connect", "Projects", "Blog", "Resume"].map(
             (elem, index) => (
