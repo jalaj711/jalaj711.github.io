@@ -46,10 +46,10 @@ const styles: style = {
       cursor: "pointer",
     },
     "& .MuiSvgIcon-root:hover": {
-      color: theme.palette.primary.main,
+      color: theme.palette.primary.dark,
       cursor: "pointer",
       transform: "translateY(-8px)",
-      filter: `drop-shadow(0 0 16px ${theme.palette.primary.main})`,
+      filter: `drop-shadow(0 0 16px ${theme.palette.primary.dark})`,
     },
   }),
   title: {
@@ -65,14 +65,14 @@ const styles: style = {
     justifyContent: "center",
   },
   footer: {
-    background: theme => theme.palette.background.paper,
+    background: (theme) => theme.palette.background.paper,
     p: 2,
-    textAlign: "center"
+    textAlign: "center",
   },
   about: (theme) => ({
     color: theme.palette.text.secondary,
     py: 2,
-  })
+  }),
 };
 
 export default styles;
