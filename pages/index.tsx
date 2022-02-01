@@ -156,17 +156,8 @@ const Home: NextPage = () => {
           <MailOutline />
         </ButtonGroup>
       </Box>
-      <Box sx={{ minHeight: "100vh" }}>
-        <Grid container sx={{ minHeight: "100vh" }}>
-          <Grid
-            item
-            xs={12}
-            md={5}
-            sx={{ color: (theme) => theme.palette.secondary.main }}
-          >
-            {/**TODO: Add a pic here */}
-          </Grid>
-          <Grid item xs={12} md={7} sx={{ py: 2 }}>
+      <Box sx={{ minHeight: "100vh", position: "relative" }}>
+        <Box sx={styles.aboutBox}>
             <Typography variant="h3">ABOUT ME</Typography>
             <Typography sx={styles.about}>
               Hi there! I am Jalaj, a student of Electrical Engineering at the
@@ -191,8 +182,7 @@ const Home: NextPage = () => {
               arsenal and currently, I am focusing my efforts on cybersecurity
               fields such as cryptography, networking and the stuff.
             </Typography>
-          </Grid>
-        </Grid>
+        </Box>
       </Box>
       <Box style={{ minHeight: "100vh" }}>
         <Grid container sx={{ minHeight: "100vh" }}>

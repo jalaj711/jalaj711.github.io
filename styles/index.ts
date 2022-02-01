@@ -12,6 +12,9 @@ const styles: style = {
     maxWidth: "50%",
     opacity: 0,
     animation: "fadeIn 0.3s forwards ease-in 0.7s",
+    background: "rgba(255, 255, 255, 0.05)",
+    p: theme.spacing(4),
+    borderRadius: theme.spacing(4),
     [theme.breakpoints.down("md")]: {
       left: 0,
       bottom: theme.spacing(2),
@@ -72,6 +75,24 @@ const styles: style = {
   about: (theme) => ({
     color: theme.palette.text.secondary,
     py: 2,
+  }),
+  aboutBox: theme => ({
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: "80vw",
+    background: "rgba(255, 255, 255, 0.05)",
+    borderRadius: theme.spacing(4),
+    padding: theme.spacing(4),
+    "& h3": {
+      textAlign: "center"
+    },
+    [theme.breakpoints.down("md")]: {
+      width: "100vw",
+      borderRadius: 0,
+      padding: theme.spacing(1)
+    }
   }),
 };
 
