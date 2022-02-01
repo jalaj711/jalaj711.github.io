@@ -15,17 +15,10 @@ import {
 } from "@mui/icons-material";
 import ProjectsCarousel from "../components/ProjectCarousel";
 import BlogCard from "../components/BlogCard";
+import Stars from "../components/Stars";
 import BlogData from "../data/blogs-latest-6.json";
 
 const Home: NextPage = () => {
-  const starStyle = {
-    width: "5px",
-    height: "5px",
-    borderRadius: "50%",
-    display: "block",
-    background: "ghostwhite",
-    boxShadow: "ghostwhite 0px 0px 20px 5px, ghostwhite 0 0 10px 1px"
-  }
   return (
     <>
       <Head>
@@ -40,75 +33,28 @@ const Home: NextPage = () => {
             top: 0,
             left: 0,
             width: "100%",
-            height: "100vh"
+            height: "100vh",
           }}
         >
-          <span
+          <Stars count={6} />
+          <div
             style={{
-              ...starStyle,
               position: "absolute",
-              top: "70%",
-              left: "65%",
-            }}
-          />
-          <span
-            style={{
-              ...starStyle,
-              position: "absolute",
-              top: "80%",
-              left: "80%",
-            }}
-          />
-          <span
-            style={{
-              ...starStyle,
-              position: "absolute",
-              top: "30%",
-              left: "20%",
-            }}
-          />
-          <span
-            style={{
-              ...starStyle,
-              position: "absolute",
+              right: "10%",
               top: "10%",
-              left: "30%",
+              width: "300px",
+              height: "300px",
+              borderRadius: "50%",
+              background: "#ebf3fe",
+              transform: "scale(0.7)",
+              boxShadow:
+                "0px 0px 60px 20px #fff, 0 0 10px 2px #ccc, 0 0 100px 10px #ccc, " +
+                "inset -40px 0px 0px #d8e8f7, inset 20px 0px 0px #ffffff, " +
+                "inset -50px 0px 0px 20px #e2eefa, 0px 0px 0px 20px rgb(255 255 255 / 5%), " +
+                "0px 0px 0px 40px rgb(255 255 255 / 3%), 0px 0px 0px 60px rgb(255 255 255 / 1%)",
             }}
           />
-          <span
-            style={{
-              ...starStyle,
-              position: "absolute",
-              top: "120px",
-              right: "40px",
-            }}
-          />
-          <span
-            style={{
-              ...starStyle,
-              position: "absolute",
-              top: "90%",
-              left: "70%",
-            }}
-          />
-            <div
-              style={{
-                position: "absolute",
-                right: "10%",
-                top: "10%",
-                width: "300px",
-                height: "300px",
-                borderRadius: "50%",
-                background: "#ebf3fe",
-                transform: "scale(0.7)",
-                boxShadow:
-                  "0px 0px 60px 20px #fff, 0 0 10px 2px #ccc, 0 0 100px 10px #ccc, "
-                  + "inset -40px 0px 0px #d8e8f7, inset 20px 0px 0px #ffffff, "
-                  + "inset -50px 0px 0px 20px #e2eefa, 0px 0px 0px 20px rgb(255 255 255 / 5%), "
-                  + "0px 0px 0px 40px rgb(255 255 255 / 3%), 0px 0px 0px 60px rgb(255 255 255 / 1%)",
-              }}
-            />
-          </div>
+        </div>
         <Box sx={styles.content}>
           <Typography color="text.secondary">hi, I am</Typography>
           <Typography
@@ -156,32 +102,78 @@ const Home: NextPage = () => {
           <MailOutline />
         </ButtonGroup>
       </Box>
-      <Box sx={{ minHeight: "100vh", position: "relative" }}>
+      <Box
+        sx={{ minHeight: "100vh", position: "relative", overflowX: "hidden" }}
+      >
+        {/**This nesting makes sure that these Stars don't get hidden behind the main content. */}
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "20vw",
+            height: "100vh",
+          }}
+        >
+          <Stars count={3} />
+        </div>
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            right: 0,
+            width: "20vw",
+            height: "100vh",
+          }}
+        >
+          <Stars count={3} />
+        </div>
+        <div
+          style={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            width: "100vw",
+            height: "20vh",
+          }}
+        >
+          <Stars count={3} />
+        </div>
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            right: 0,
+            width: "100vw",
+            height: "20vh",
+          }}
+        >
+          <Stars count={3} />
+        </div>
         <Box sx={styles.aboutBox}>
-            <Typography variant="h3">ABOUT ME</Typography>
-            <Typography sx={styles.about}>
-              Hi there! I am Jalaj, a student of Electrical Engineering at the
-              National Institute Of Technology, Durgapur.
-            </Typography>
-            <Typography sx={styles.about}>
-              I have a keen interest in computer programming, especially
-              creating web pages and other applications in languages like
-              Python, C, C++, and Go. I am fairly acquainted with the following
-              technologies:
-              <ul style={{ listStyleType: "circle" }}>
-                <li>React</li>
-                <li>Typescript</li>
-                <li>NodeJs</li>
-                <li>NextJs</li>
-                <li>Flask</li>
-                <li>Django</li>
-              </ul>
-            </Typography>
-            <Typography sx={styles.about}>
-              Besides these, I am always striving to add new technologies in my
-              arsenal and currently, I am focusing my efforts on cybersecurity
-              fields such as cryptography, networking and the stuff.
-            </Typography>
+          <Typography variant="h3">ABOUT ME</Typography>
+          <Typography sx={styles.about}>
+            Hi there! I am Jalaj, a student of Electrical Engineering at the
+            National Institute Of Technology, Durgapur.
+          </Typography>
+          <Typography sx={styles.about}>
+            I have a keen interest in computer programming, especially creating
+            web pages and other applications in languages like Python, C, C++,
+            and Go. I am fairly acquainted with the following technologies:
+            <ul style={{ listStyleType: "circle" }}>
+              <li>React</li>
+              <li>Typescript</li>
+              <li>NodeJs</li>
+              <li>NextJs</li>
+              <li>Flask</li>
+              <li>Django</li>
+            </ul>
+          </Typography>
+          <Typography sx={styles.about}>
+            Besides these, I am always striving to add new technologies in my
+            arsenal and currently, I am focusing my efforts on cybersecurity
+            fields such as cryptography, networking and the stuff.
+          </Typography>
         </Box>
       </Box>
       <Box style={{ minHeight: "100vh" }}>

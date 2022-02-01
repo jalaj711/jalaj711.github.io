@@ -15,6 +15,7 @@ const styles: style = {
     background: "rgba(255, 255, 255, 0.05)",
     p: theme.spacing(4),
     borderRadius: theme.spacing(4),
+    backdropFilter: "blur(10px)",
     [theme.breakpoints.down("md")]: {
       left: 0,
       bottom: theme.spacing(2),
@@ -85,6 +86,7 @@ const styles: style = {
     background: "rgba(255, 255, 255, 0.05)",
     borderRadius: theme.spacing(4),
     padding: theme.spacing(4),
+    backdropFilter: "blur(10px)",
     "& h3": {
       textAlign: "center"
     },
