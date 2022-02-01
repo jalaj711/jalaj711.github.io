@@ -15,7 +15,6 @@ export const GlowingButton = styled("button")(({ theme }) => ({
     cursor: "pointer",
     background: theme.palette.primary.main,
     boxShadow: `0 0 5px ${theme.palette.primary.main}, 0 0 25px ${theme.palette.primary.main}, 0 0 50px ${theme.palette.primary.main}, 0 0 200px ${theme.palette.primary.main}`,
-    "-webkit-box-reflect": "below 8px linear-gradient(transparent 40%, #0005)",
   },
 }));
 
