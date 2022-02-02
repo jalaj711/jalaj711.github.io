@@ -32,14 +32,9 @@ const BlogCard = (
         },
       }}
     >
-      <Card style={{ borderRadius: theme.spacing(2), background: theme.palette.background.paper }}>
-        <CardMedia
-          component="img"
-          height="140"
-          image={props.data.image}
-          alt="Blog logo"
-          style={{ flexGrow: 1, minHeight: "140px" }}
-        />
+      <div style={{background: theme.palette.background.default, borderRadius: theme.spacing(2)}}>
+      <Card style={{ borderRadius: theme.spacing(2), background: "rgba(255, 255, 255, 0.05)" }}>
+        
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {props.data.title}
@@ -54,10 +49,6 @@ const BlogCard = (
         </CardContent>
         <CardActions
           sx={{
-            background:
-              "linear-gradient(transparent, " +
-              theme.palette.background.paper +
-              ")",
             position: "sticky",
             bottom: 0,
           }}
@@ -68,9 +59,6 @@ const BlogCard = (
             sx={{
               opacity: 0,
               transition: "0.4s",
-              color: "transparent",
-              background: `linear-gradient(to right, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
-              backgroundClip: "text",
               "&:hover": {
                 backgroundPosition: "40px"
               },
@@ -83,6 +71,7 @@ const BlogCard = (
           </Button>
         </CardActions>
       </Card>
+      </div>
     </Box>
   );
 };
