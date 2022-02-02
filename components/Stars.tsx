@@ -5,6 +5,7 @@ export default function Star(props: {count: number}){
         borderRadius: "50%",
         display: "block",
         background: "ghostwhite",
+	zIndex: -10,
         boxShadow: "ghostwhite 0px 0px 20px 5px, ghostwhite 0 0 10px 1px"
       }
     var arr: Array<Array<number>> = []
