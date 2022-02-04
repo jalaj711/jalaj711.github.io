@@ -36,7 +36,7 @@ const Home: NextPage = () => {
             height: "100vh",
           }}
         >
-          <Stars count={6} />
+          <Stars count={8} />
           <div
             style={{
               position: "absolute",
@@ -176,7 +176,9 @@ const Home: NextPage = () => {
           </Typography>
         </Box>
       </Box>
-      <Box style={{ minHeight: "100vh" }}>
+      <Box style={{ minHeight: "100vh", position: "relative" }}>
+        <Stars count={7} />
+
         <Grid container sx={{ minHeight: "100vh" }}>
           <Grid item xs={12} md={5} sx={styles.title}>
             <Typography variant="h2">PROJECTS</Typography>
@@ -200,8 +202,9 @@ const Home: NextPage = () => {
           </Grid>
         </Grid>
       </Box>
-      <Box style={{ minHeight: "100vh" }}>
+      <Box style={{ minHeight: "100vh", position: "relative" }}>
         {/** The blogs view */}
+        <Stars count={14} />
         <Grid
           container
           sx={{ p: 2, display: "flex", justifyContent: "center" }}
