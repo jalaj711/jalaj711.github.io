@@ -23,17 +23,16 @@ const BlogCard = (
         transition: "0.4s",
         display: "flex",
         flexDirection: "column",
-        backgroundImage: "none",
+        backgroundImage: "none",backdropFilter: "blur(10px)", background: "rgba(255, 255, 255, 0.05)",
         "&:hover": {
-          background: `linear-gradient(135deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+          //background: `linear-gradient(135deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
           "& .MuiCardActions-root .MuiButton-root": {
             opacity: "1 !important",
           },
         },
       }}
     >
-      <div style={{background: theme.palette.background.default, borderRadius: theme.spacing(2)}}>
-      <Card style={{ borderRadius: theme.spacing(2), background: "rgba(255, 255, 255, 0.05)" }}>
+      <Card style={{ borderRadius: theme.spacing(2), background: "transparent" }}>
         
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
@@ -59,9 +58,7 @@ const BlogCard = (
             sx={{
               opacity: 0,
               transition: "0.4s",
-              "&:hover": {
-                backgroundPosition: "40px"
-              },
+              color: "white",
               [theme.breakpoints.down("sm")]: {
                 display: "none",
               },
@@ -71,7 +68,6 @@ const BlogCard = (
           </Button>
         </CardActions>
       </Card>
-      </div>
     </Box>
   );
 };
