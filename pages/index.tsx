@@ -45,7 +45,7 @@ const Home: NextPage = () => {
           display: bgHeight === "0" ? "none" : "block",
         }}
       >
-        <Stars count={50} />
+        <Stars count={30} />
       </div>
       <Box style={{ minHeight: "100vh", position: "relative" }}>
         <div
